@@ -1,15 +1,19 @@
 import React from "react";
 import { Route } from "react-router";
-import DefaultHOC from "./HOC/DefaultHOC";
 
 // importing slick carousel css
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import HomePage from "./pages/Home.Page";
 
-function Homepage() {
-    return <h1>This homepage</h1>
-}
+// Higher order components
+import DefaultHOC from "./HOC/DefaultHOC";
+import MovieHOC from "./HOC/MovieHOC";
+
+// Pages
+import HomePage from "./pages/Home.Page";
+import MoviePage from "./pages/Movie.Page";
+
+
 function Contact() {
     return <h1>This is a contact page</h1>
 }
@@ -19,7 +23,7 @@ function App() {
     return (
         <>
             <DefaultHOC path="/" exact component={HomePage} />
-            <DefaultHOC path="/contact" exact component={Contact} />
+            <MovieHOC path="/movie/:id" exact component={MoviePage} />
         </>
     );
 }

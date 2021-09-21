@@ -1,4 +1,5 @@
 import React from 'react'
+import EntertainmentCardSlider from '../components/Entertainment/Entertainment.Component'
 import HeroCarousel from '../components/HeroCarousel/HeroCarousel.Component'
 import Navbar from '../components/Navbar/Navbar.Component'
 
@@ -6,7 +7,7 @@ function DefaultLayout(props) {
     return (
         <div>
             <Navbar />
-            <HeroCarousel />
+
             {props.children}
 
             {console.log(props.children)}

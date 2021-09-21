@@ -4,17 +4,9 @@ import Poster from '../Poster/Poster.Component';
 
 
 
-const PosterSlider = () => {
+const PosterSlider = (props) => {
 
-    const posterImages = [
-        "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00312484-ehedpyzcmm-portrait.jpg",
-        "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00137316-jlvpmlrpyw-portrait.jpg",
-        "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00310648-uwreepnzec-portrait.jpg",
-        "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00137312-qszmhzktyk-portrait.jpg",
-        "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00137455-pxtjxgdyua-portrait.jpg",
-        "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00302306-xxwtjnexzz-portrait.jpg",
-        "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@premiere-icon.png,ox-322,oy-20/et00303783-plktjmqsfm-portrait.jpg",
-    ];
+
 
     const settings = {
         infinite: false,
@@ -49,15 +41,17 @@ const PosterSlider = () => {
 
     }
 
+    const {posters, title, subtitle, isDark} = props;
+    
+
     return (
         <>
-            <div className="container px-4 flex flex-col my-4">
-                <h3 className="text-2xl font-bold text-gray-800 my-3">Recommended movies</h3>
-                <p className="text-sm text-gray-800">Hey there! These are recommended movies</p>
+            <div className="container px-4 flex flex-col my-10">
+                <h3 className={`text-2xl font-bold md:px-3 p-1 ${isDark ? "text-white" : "text-gray-800" } `}>{title}</h3>
+                <p className={`text-sm md:px-3 p-1 ${isDark ? "text-white" : "text-gray-800"}`}>{subtitle}</p>
                 <Slider {...settings} className="mt-4">
-                    {posterImages.map((image) => {
-                        console.log(image);
-                        return <Poster src={image}/>
+                    {posters.map((each) => {
+                        return <Poster {...each} isDark />
                     })}
                 </Slider>
             </div>

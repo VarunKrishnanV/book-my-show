@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../images/logo.png";
 import { BiChevronDown, BiMenu, BiSearch } from 'react-icons/bi'
 
 const NavSm = () => {
@@ -32,7 +31,7 @@ const NavLg = () => {
             <div className="container mx-auto px-4 flex items-center justify-between">
                 <div className="flex items-center w-1/2 gap-3">
                     <div className="w-40">
-                        <img src={logo} alt="logo" className="w-full h-full" />
+                        <img src="https://in.bmscdn.com/webin/common/icons/logo.svg" alt="logo" className="w-full h-full" />
                     </div>
                     <div className="w-full flex items-center gap-2 bg-white px-3 py-1 rounded-md">
                         <BiSearch />

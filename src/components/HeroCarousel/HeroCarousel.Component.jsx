@@ -69,5 +69,3 @@ function HeroCarousel() {
 
 export default HeroCarousel;
 
-
-// I purchased CB - GK - 16 Firefly RGB Mechanical Keyboard with Outemu Blue Switch on 22.02.2021.It's working fine but the issue is with their backlight. Some colors doesn't works in some keys.I tried resetting the keyboard but its not troubleshooting.Kindly take care of this issue as soon as possible.Thank you.

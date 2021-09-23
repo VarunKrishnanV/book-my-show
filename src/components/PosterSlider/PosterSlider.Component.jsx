@@ -41,7 +41,11 @@ const PosterSlider = (props) => {
 
     }
 
-    const {posters, title, subtitle, isDark} = props;
+    const {posters, title, subtitle, isDark, config} = props;
+
+
+    // if we pass the slider setting that setting will apply to the slider. else the style that are currently there in this file will apply
+    const currentSettings = config ? config : settings;
     
 
     return (
@@ -49,9 +53,9 @@ const PosterSlider = (props) => {
             <div className="container px-4 flex flex-col my-10">
                 <h3 className={`text-2xl font-bold md:px-3 p-1 ${isDark ? "text-white" : "text-gray-800" } `}>{title}</h3>
                 <p className={`text-sm md:px-3 p-1 ${isDark ? "text-white" : "text-gray-800"}`}>{subtitle}</p>
-                <Slider {...settings} className="mt-4">
+                <Slider {...currentSettings} className="mt-4">
                     {posters.map((each) => {
-                        return <Poster {...each} isDark />
+                        return <Poster {...each} isDark={isDark} />
                     })}
                 </Slider>
             </div>

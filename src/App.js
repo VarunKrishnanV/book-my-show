@@ -12,6 +12,7 @@ import MovieHOC from "./HOC/MovieHOC";
 // Pages
 import HomePage from "./pages/Home.Page";
 import MoviePage from "./pages/Movie.Page";
+import Plays from "./pages/Play.Page";
 
 
 function Contact() {
@@ -24,6 +25,7 @@ function App() {
         <>
             <DefaultHOC path="/" exact component={HomePage} />
             <MovieHOC path="/movie/:id" exact component={MoviePage} />
+            <DefaultHOC path="/plays" exact component={Plays} />
         </>
     );
 }

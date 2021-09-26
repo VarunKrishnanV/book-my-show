@@ -13,12 +13,14 @@ import MovieHOC from "./HOC/MovieHOC";
 import HomePage from "./pages/Home.Page";
 import MoviePage from "./pages/Movie.Page";
 import Plays from "./pages/Play.Page";
+import axios from "axios";
 
+// setting a base URL where we will be sending the api request everytime
+axios.defaults.baseURL = "https://api.themoviedb.org/3";
 
-function Contact() {
-    return <h1>This is a contact page</h1>
-}
-
+// setting the default params to empty and then setting the same to api key
+axios.defaults.params = {};
+axios.defaults.params["api_key"] = process.env.REACT_APP_API_KEY;
 
 function App() {
     return (
